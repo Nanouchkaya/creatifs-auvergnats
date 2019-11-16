@@ -1,0 +1,30 @@
+@keyframes dropSection {
+  0% { 
+    opacity: 0;
+    transform: translateY(-5%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;  
+  }
+  100% {
+    opacity: 1;  
+  }
+}
+
+@keyframes fromCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

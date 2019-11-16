@@ -1,0 +1,13 @@
+// FONTS
+@font-face {
+  font-family: "Blooming Elegant";
+  src: url('../fonts/Blooming_Elegant_Sans.otf') format("opentype")
+}
+
+@font-face {
+  font-family: "Madgue Script";
+  src: url('../fonts/Madgue_Script.otf') format("opentype")
+}
+
+$titleFont: "Madgue Script";
+$textFont: "Blooming Elegant";

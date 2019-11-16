@@ -1,0 +1,7 @@
+@import "vars";
+
+@mixin mainBloc {
+  .title {
+    font-family: $titleFont;
+  }
+}
