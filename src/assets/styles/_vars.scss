@@ -9,5 +9,11 @@
   src: url('../fonts/Madgue_Script.otf') format("opentype")
 }
 
+@font-face {
+  font-family: "Guardian Egyptian";
+  src: url('../fonts/GuardianEgyptianThin.otf') format("opentype")
+}
+
 $titleFont: "Madgue Script";
-$textFont: "Blooming Elegant";
+$subtitleFont: "Blooming Elegant";
+$textFont: "Guardian Egyptian";

@@ -12,10 +12,10 @@ const Intro = ({ sal }) => (
     id="intro"
   >
     <h1 className={introStyles.title}>Les créatifs auvergnats</h1>
-    <h2>
+    <h2 className={introStyles.subtitle}>
       Par la team <strong>Etsy</strong> auvergne
     </h2>
-    <p>
+    <p className={introStyles.paragraphe}>
       Le collectif "Les créatifs auvergnats" rassemble des créateurs de notre
       belle région : l'<strong>auvergne</strong>. Un seul mot d'ordre parmi ces
       créateurs : le fait-main, et le <strong>fait-main</strong> local ! Sous la
@@ -25,7 +25,7 @@ const Intro = ({ sal }) => (
       des cartes à planter, des cosmétiques bio ou encore des doudous pour
       enfants. Un large éventail de créations vous attendent.
     </p>
-    <p>
+    <p className={introStyles.paragraphe}>
       Plusieurs fois dans l'année, nous organisons des
       <strong>marchés de créateurs</strong> pour promouvoir le fait-main
       auvergnat ainsi que des apéros créateurs pour échanger dans nos métiers.

@@ -3,6 +3,20 @@
 
 body {
   font-family: $textFont;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
+  line-height: 1.7rem;
+}
+
+main {
+  margin: 0 1rem;
+}
+
+
+
+@media (min-width: 768px) {
+  main {
+    margin: auto;
+    max-width: 950px;
+  }
 }
