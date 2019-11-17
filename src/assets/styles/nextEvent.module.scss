@@ -14,13 +14,14 @@
   margin: 3rem 0;
 
   .banner {
-    max-width: 90%;
+    width: 100%;
     transition: 200ms ease-in;
     border-radius: 5px;
+    border:2px solid white;
   }
 
   &:hover .banner {
-    box-shadow: 0 0 20px rgba(0,0,0,.4);
+    box-shadow: 0 0 20px rgba(134, 108, 93, 0.4);
   }
 }
 

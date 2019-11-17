@@ -7,12 +7,14 @@
   justify-content: space-around;
   min-height: 80vh;
   margin: 0;
+  padding: .5rem 1rem;
   background: $color;
 
   .title {
     font-family: $titleFont;
     font-size: 3.5rem;
     padding: 2rem 0 1rem;
+    line-height: 2.5rem;
   }
 
   .subtitle {
