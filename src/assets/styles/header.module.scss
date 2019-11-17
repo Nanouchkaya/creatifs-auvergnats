@@ -1,4 +1,5 @@
 @import "_vars";
+@import "_animations";
 
 .header {
   height: 100vh;
@@ -6,17 +7,26 @@
   background-size: 100vw;
   background-position: top center;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoBan {
+  width: 40vw;
+  margin: auto;
+  margin-top: calc(50vh - 13vw);
+  opacity: 0;
+  animation: dropSection 500ms ease-in-out 600ms forwards;
 }
 
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgba(255,255,255,.5);
   border-bottom: 1px solid white;
-  padding: 1rem;
 
   li {
     color: white;
@@ -25,7 +35,6 @@
     font-family: $subtitleFont;
     font-size: 2rem;
     margin: 0 1rem;
-    padding: .5rem;
 
     a {
       border-bottom: 2px solid rgba(255,255,255,0);
@@ -35,6 +44,21 @@
     a:hover {
       border-color: white;
     }
+  }
+
+  li:first-child {
+    flex-grow: 6;
+    .logoNav {
+      width: 90px;
+      margin: .2rem 0;
+      mix-blend-mode: difference;
+    }
+    a {
+      border:none; 
+    }
+    a:hover > .logoNav {
+        mix-blend-mode: normal;
+      }
   }
 
   &-active {

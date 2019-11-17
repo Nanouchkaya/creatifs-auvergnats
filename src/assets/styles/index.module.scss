@@ -8,14 +8,14 @@ body {
   line-height: 1.7rem;
 }
 
-main {
+.main {
   margin: 0 1rem;
 }
 
 
 
 @media (min-width: 768px) {
-  main {
+  .main {
     margin: auto;
     max-width: 950px;
   }

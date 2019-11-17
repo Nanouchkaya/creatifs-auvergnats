@@ -1,7 +1,7 @@
 import React from "react"
 
 // Locals imports
-import "../assets/styles/_index.scss"
+import indexStyles from "../assets/styles/index.module.scss"
 import Header from "../components/Header"
 import Intro from "../components/Intro"
 import Team from "../components/Team"
@@ -17,10 +17,10 @@ const IndexPage = () => {
   const salParams = ["slide-up", "300", "ease-in"]
 
   return (
-    <div id="wrapper">
+    <div id={indexStyles.wrapper}>
       <Head />
       <Header />
-      <main>
+      <main className={indexStyles.main}>
         <Intro sal={salParams} />
         <Team sal={salParams} />
         <NextEvent sal={salParams} />
