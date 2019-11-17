@@ -14,7 +14,7 @@ import Head from "../components/Head"
 
 const IndexPage = () => {
   // generals values for scroll reveal data attributes for each main components
-  const salParams = ["slide-up", "300", "ease-in"]
+  const salParams = ["fade", "400", "ease-in"]
 
   return (
     <div id={indexStyles.wrapper}>

@@ -9,9 +9,8 @@ import logo from "../assets/images/logo_white.png"
 const Header = () => (
   <header
     className={headerStyles.header}
-    style={{ "background-image": `url(${banner})` }}
+    style={{ backgroundImage: `url(${banner})` }}
   >
-
     <ScrollspyNav
       scrollTargetIds={["intro", "team", "nextevent", "creators", "contact"]}
       activeNavClass={headerStyles.navbarActive}
