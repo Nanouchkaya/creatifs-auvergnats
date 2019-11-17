@@ -1,0 +1,10 @@
+@import "vars";
+@import "mixins";
+
+.container {
+  @include mainBloc(rgb(192, 174, 177));
+}
+
+@media (min-width: 768px) {
+  
+}

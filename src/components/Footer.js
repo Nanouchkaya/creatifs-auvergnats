@@ -24,7 +24,11 @@ const Footer = ({ sal }) => {
       data-sal-delay={sal[1]}
       data-sal-easing={sal[2]}
     >
-      <p>Site créé par {author}, © 2019</p>
+      <p>Développement {author}, © 2019</p>
+      <p>
+        Photographies{" "}
+        <a href="https://www.amandinebaudet.com/">Amandine Baudet</a>
+      </p>
     </footer>
   )
 }

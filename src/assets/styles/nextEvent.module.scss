@@ -1,0 +1,34 @@
+@import "vars";
+@import "mixins";
+
+.container {
+  @include mainBloc(white);
+
+  .title {
+    margin: 2rem 0 0;
+  }
+}
+
+.link {
+  display: block;
+  margin: 3rem 0;
+
+  .banner {
+    max-width: 90%;
+    transition: 200ms ease-in;
+    border-radius: 5px;
+  }
+
+  &:hover .banner {
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+  }
+}
+
+.paragraphe {
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  
+}

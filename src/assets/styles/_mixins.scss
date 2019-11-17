@@ -1,11 +1,13 @@
 @import "vars";
 
-@mixin mainBloc {
+@mixin mainBloc($color) {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 70vh;
+  min-height: 80vh;
+  margin: 0;
+  background: $color;
 
   .title {
     font-family: $titleFont;
@@ -17,5 +19,12 @@
     font-family: $subtitleFont;
     font-size: 2rem;
     padding-bottom: 2rem;
+  }
+
+  @media (min-width: 980px) {
+    padding: 0 7rem;
+  }
+  @media (min-width: 1200px) {
+    padding: 0 15vw;
   }
 }
