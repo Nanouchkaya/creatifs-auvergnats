@@ -5,6 +5,43 @@
   @include mainBloc(rgb(192, 174, 177));
 }
 
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  width: 80%;
+  margin: auto;
+
+  &-label {
+    margin: .7rem auto;
+    display:block;
+    width: 60%;
+    font-family: $subtitleFont;
+    font-size: 1.7rem;
+    text-align: left;
+  }
+
+  &-input {
+    display: block;
+    width: 95%;
+    padding: .8rem 1.1rem;
+    border-radius: 5px;
+    border: none;
+    margin: .5rem auto;
+  }
+
+  &-button {
+    display: block;
+    width: 200px;
+    margin: 1rem auto;
+    font-family: $subtitleFont;
+    font-size: 1.7rem;
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid white;
+  }
+}
+
 @media (min-width: 768px) {
   
 }
