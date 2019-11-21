@@ -8,6 +8,9 @@ module.exports = {
   siteMetadata: {
     title: "Les Creatifs Auvergnats",
     mail: "lescreatifsauvergnats@gmail.com",
+    instagram: "https://www.instagram.com/teametsyauvergne",
+    facebook: "https://www.facebook.com/teametsyauvergne",
+    privateGroup: "https://www.facebook.com/groups/512000855657242",
     author: "Claudine Brun",
     portfolio: "coding-claudine.eu",
   },
@@ -21,7 +24,16 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    // plugins pour les images
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images/`,
+      },
+    },
     "gatsby-plugin-scroll-reveal",
   ],
 }

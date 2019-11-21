@@ -5,6 +5,28 @@
   @include mainBloc(white);
 }
 
+.paragraphe {
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+
+  .photo {
+    width: calc(100%/2 - 0.4rem);
+    margin: 0.2rem;
+  }
+}
+
 @media (min-width: 768px) {
-  
+  .gallery {
+    .photo {
+      width: calc(100%/5 - 0.4rem);
+    }
+  }
 }

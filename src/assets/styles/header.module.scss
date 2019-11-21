@@ -23,13 +23,16 @@
 .navbar {
   position: fixed;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
   background-color: rgba(255,255,255,.5);
   border-bottom: 1px solid white;
   z-index: 1;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   li {
     color: white;
@@ -67,7 +70,7 @@
   }
 
   &-active {
-    color: #8F9CA5;
+    color: rgb(27, 28, 29);
     text-shadow: none;
     
   }
@@ -86,11 +89,12 @@
 @media (min-width: 768px) {
   .header {
     background-size: 100vw;
-    background-position-y: bottom;
+    background-position-y: -100px;
   }
 
   .logoBan {
     width: 40vw;
     mix-blend-mode: normal;
+    margin-top: calc(60vh - 20vw);
   }
 }

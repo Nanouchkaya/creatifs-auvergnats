@@ -29,6 +29,7 @@ const Footer = ({ sal }) => {
         Photographies{" "}
         <a href="https://www.amandinebaudet.com/">Amandine Baudet</a>
       </p>
+      <p>Logo Cynydd</p>
     </footer>
   )
 }

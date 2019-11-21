@@ -32,6 +32,7 @@ class Header extends React.Component {
             "team",
             "nextevent",
             "creators",
+            "pastevents",
             "contact",
           ]}
           activeNavClass={headerStyles.navbarActive}
@@ -39,30 +40,35 @@ class Header extends React.Component {
           headerBackground="true"
         >
           <nav className={headerStyles.navbar}>
-            <li>
-              <a href="/">
-                <img
-                  src={logo}
-                  alt="Logo Créatifs auvergnats"
-                  className={headerStyles.logoNav}
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#intro">Qui sommes-nous ?</a>
-            </li>
-            <li>
-              <a href="#team">Organisateurs</a>
-            </li>
-            <li>
-              <a href="#nextevent">Prochain événement</a>
-            </li>
-            <li>
-              <a href="#creators">Les créatifs</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+            <ul>
+              <li>
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="Logo Créatifs auvergnats"
+                    className={headerStyles.logoNav}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#intro">Qui sommes-nous ?</a>
+              </li>
+              <li>
+                <a href="#team">Organisateurs</a>
+              </li>
+              <li>
+                <a href="#nextevent">Prochain événement</a>
+              </li>
+              <li>
+                <a href="#creators">Les créatifs</a>
+              </li>
+              <li>
+                <a href="#pastevents">Galerie</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
           </nav>
         </ScrollspyNav>
 
