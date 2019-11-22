@@ -14,11 +14,7 @@ const PastEvents = ({ sal }) => {
             base
             childImageSharp {
               fluid(quality: 100) {
-                aspectRatio
-                sizes
-                src
-                srcSet
-                originalName
+                ...GatsbyImageSharpFluid
               }
               id
             }
@@ -46,7 +42,7 @@ const PastEvents = ({ sal }) => {
         {data.allFile.edges.map(({ node }) => {
           return (
             <Img
-              key={node.id}
+              key={node.childImageSharp.id}
               fluid={node.childImageSharp.fluid}
               alt={node.childImageSharp.fluid.originalName}
               className={pasteventsStyles.photo}
