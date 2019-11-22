@@ -32,7 +32,7 @@
   font-family: $subtitleFont;
 
   .event {
-    flex: 30%;
+    flex: 100%;
     text-align: left;
     margin: 1rem;
 
@@ -66,6 +66,12 @@
   .gallery {
     .photo {
       width: calc(100%/5 - 0.4rem);
+    }
+  }
+
+  .list {
+    .event {
+      flex: 30%;
     }
   }
 }

@@ -23,7 +23,7 @@ const Team = ({ sal }) => (
           className={teamStyles.photo}
           style={{ backgroundImage: `url(${TeamOne}` }}
         />
-        <span className={teamStyles.name}>Christelle Brun</span>
+        <span className={teamStyles.name}>Christelle</span>
         <ul className={teamStyles.teamLinks}>
           <li>
             <a href="" title="Site">
@@ -51,7 +51,7 @@ const Team = ({ sal }) => (
           className={teamStyles.photo}
           style={{ backgroundImage: `url(${TeamTwo}` }}
         />
-        <span className={teamStyles.name}>Caroline Thieu</span>
+        <span className={teamStyles.name}>Caroline</span>
         <ul className={teamStyles.teamLinks}>
           <li>
             <a href="" title="Site">

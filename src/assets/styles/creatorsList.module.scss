@@ -20,5 +20,44 @@
   }
 }
 
+.categories {
+  display:flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  margin: 3rem auto;
+
+  .category {
+    flex: calc(100% / 6);
+    margin: .5rem;
+    padding: .5rem;
+    text-align: left;
+    background-color: rgba(255,255,255,.2);
+    border: 2px solid white;
+
+    &-name {
+      font-family: $titleFont;
+      font-size: 1.9rem;
+      text-align: center;
+      padding: .5rem 0 1rem;
+    }
+
+    &-list {
+      font-family: $subtitleFont;
+      margin-left: 1rem;
+    }
+
+    &-link {
+      margin-left: .3rem;
+      color: #3B1C17;
+      border-bottom: 1px solid transparent;
+      transition: all 200ms ease-in;
+
+      &:hover {
+        border-bottom-color:#3B1C17;
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
 }
