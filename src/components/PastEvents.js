@@ -38,7 +38,7 @@ const PastEvents = ({ sal }) => {
     >
       <h1 className={pasteventsStyles.title}>Nos marchés terminés</h1>
       <p className={pasteventsStyles.paragraphe}>
-        Depuis 20XX, nous organisons des événements et participons à des marchés
+        Depuis 2016, nous organisons des événements et participons à des marchés
         de créateurs. Apprenez en plus sur l'ambiance du collectif à travers
         notre galerie de photos ci-dessous.
       </p>

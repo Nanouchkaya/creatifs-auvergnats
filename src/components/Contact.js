@@ -3,14 +3,8 @@ import React, { useState } from "react"
 // Locals imports
 import contactStyles from "../assets/styles/contact.module.scss"
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
-
 const Contact = ({ sal }) => {
-  const [state, setState] = useState({})
+  const [state, setState] = useState({ status: "" })
 
   const handleChange = e => {
     setState({
@@ -21,17 +15,24 @@ const Contact = ({ sal }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": e.target.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then()
-      .catch(error => alert(error))
+    const form = e.target
+    const data = new FormData(form)
+    const xhr = new XMLHttpRequest()
+    xhr.open(form.method, form.action)
+    xhr.setRequestHeader("Accept", "application/json")
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
+      if (xhr.status === 200) {
+        form.reset()
+        setState({ status: "SUCCESS" })
+      } else {
+        setState({ status: "ERROR" })
+      }
+    }
+    xhr.send(data)
   }
+
+  const { status } = state
 
   return (
     <div
@@ -46,11 +47,10 @@ const Contact = ({ sal }) => {
         className={contactStyles.form}
         name="contact"
         method="post"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
+        action="https://formspree.io/xzbblzyv"
         onSubmit={handleSubmit}
       >
-        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="_gotcha" />
         <label className={contactStyles.formLabel}>
           Nom
           <input
@@ -66,8 +66,8 @@ const Contact = ({ sal }) => {
           <input
             className={contactStyles.formInput}
             type="email"
-            name="email"
-            id="email"
+            name="_replyto"
+            id="_replyto"
             onChange={handleChange}
             required
           />
@@ -93,11 +93,39 @@ const Contact = ({ sal }) => {
             required
           />
         </label>
-        <button className={contactStyles.formButton} type="submit">
-          Envoyer
-        </button>
+        {status === "SUCCESS" ? (
+          <p className={contactStyles.statusMessage}>Merci !</p>
+        ) : (
+          <button className={contactStyles.formButton} type="submit">
+            ~ Envoyer ~
+          </button>
+        )}
+        {status === "ERROR" && (
+          <p className={contactStyles.statusMessage}>
+            Oups ! Le message n'a pu être envoyé.
+          </p>
+        )}
       </form>
     </div>
   )
 }
 export default Contact
+
+// fetch("/")
+//       .then(res => {
+//         console.log(res)
+//         if (status === 200) {
+//           e.target.reset()
+//           setState({
+//             ...state,
+//             status: "SUCCESS",
+//           })
+//         }
+//       })
+//       .catch(error => {
+//         console.log(error)
+//         setState({
+//           ...state,
+//           errors: [error],
+//         })
+//       })

@@ -3,8 +3,17 @@
 
 .footer {
   @include mainBloc(white);
+  min-height: 15vh;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  font-family: $subtitleFont;
 }
 
 @media (min-width: 768px) {
-  
+  .footer {
+    width: 70%;
+    margin: auto;
+    padding: 2rem 0;
+  }
 }

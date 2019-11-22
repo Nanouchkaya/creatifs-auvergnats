@@ -19,8 +19,14 @@ const CreatorsList = ({ sal }) => (
       sont ces créateurs que vous pourrez être amenés à découvrir lors de nos
       événements. Si vous êtes vous même un artisan du fait-main et que vous
       souhaitez nous rejoindre, il vous suffit de nous contacter grâce au
-      formulaire plus bas.
+      formulaire dédié.
     </p>
+    <a
+      href="https://docs.google.com/forms/d/1-2tqw4zxiisUO8HJ-OTVs766axd4dRdXIgA-0W6KWBI"
+      className={creatorslistStyles.link}
+    >
+      ~ Rejoindre le collectif ~
+    </a>
   </div>
 )
 
