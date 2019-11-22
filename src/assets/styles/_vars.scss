@@ -15,6 +15,6 @@
   src: url('../fonts/GuardianEgyptianThin.otf') format("opentype")
 }
 
-$titleFont: "Madgue Script";
-$subtitleFont: "Blooming Elegant";
-$textFont: "Guardian Egyptian";
+$titleFont: "Madgue Script", serif;
+$subtitleFont: "Blooming Elegant", serif;
+$textFont: "Guardian Egyptian", sans-serif;
