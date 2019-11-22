@@ -3,6 +3,10 @@
 
 .container {
   @include mainBloc(white);
+
+  .subtitle {
+    text-align: center;
+  }
 }
 
 .paragraphe {

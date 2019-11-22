@@ -29,7 +29,6 @@
   justify-content: space-around;
   width: 90%;
   margin: auto;
-  font-family: $subtitleFont;
 
   .event {
     flex: 100%;
@@ -38,18 +37,24 @@
 
     &-name {
       font-size: 1.8rem;
+      font-family: $subtitleFont;
+      margin-bottom: .5rem;
     }
 
     &-date {
       margin-left: .3rem;
+      font-size: 1rem;
+      font-weight: 600;
     }
 
     &-address {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-left: .3rem;
+      width: 80%;
     }
 
     &-link {
+      font-family: $subtitleFont;
       margin-left: .3rem;
       color: #546B77;
       border-bottom: 1px solid transparent;

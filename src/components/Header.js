@@ -34,8 +34,6 @@ const Header = () => {
     }
   `)
 
-  console.log(data)
-
   return (
     <BackgroundImage
       Tag="header"

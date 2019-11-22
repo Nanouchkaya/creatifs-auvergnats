@@ -20,7 +20,8 @@
   .subtitle {
     font-family: $subtitleFont;
     font-size: 2rem;
-    padding-bottom: 2rem;
+    padding: 1.5rem 0;
+    text-align: left;
   }
 
   @media (min-width: 980px) {
