@@ -14,14 +14,14 @@ const Head = ({ page }) => {
   `)
 
   return (
-    <>
-      {page === "index" && (
-        <Helmet title={`${page} | ${data.site.siteMetadata.title}`} />
-      )}
-      {page === "Mentions Légales" && (
-        <Helmet title={`${page} | ${data.site.siteMetadata.title}`} />
-      )}
-    </>
+    <Helmet>
+      <html lang="fr" />
+      <meta
+        name="description"
+        content="Collectif Les Créatifs Auvergnats, Etsy, fait-main, local"
+      />
+      <title>{data.site.siteMetadata.title}</title>
+    </Helmet>
   )
 }
 

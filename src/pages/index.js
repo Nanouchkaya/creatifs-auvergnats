@@ -18,7 +18,7 @@ const IndexPage = () => {
 
   return (
     <div id={indexStyles.wrapper}>
-      <Head page="index" />
+      <Head />
       <Header />
       <main className={indexStyles.main}>
         <Intro sal={salParams} />

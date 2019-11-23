@@ -27,10 +27,14 @@ const Footer = ({ sal }) => {
       <a href="https://www.instagram.com/teametsyauvergne" title="Instagram">
         <img src={itIcon} alt="instagram" className={footerStyles.icon} />
       </a>
-      
-      <button type="button" onClick={displayLegalMention} className={footerStyles.button}>Mentions légales</button>
+      <button
+        type="button"
+        onClick={displayLegalMention}
+        className={footerStyles.button}
+      >
+        Mentions légales
+      </button>
       {state.status && <LegalMention className={footerStyles.legalmention} />}
-      
     </footer>
   )
 }

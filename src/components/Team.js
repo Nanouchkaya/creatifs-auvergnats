@@ -26,17 +26,17 @@ const Team = ({ sal }) => (
         <span className={teamStyles.name}>Christelle</span>
         <ul className={teamStyles.teamLinks}>
           <li>
-            <a href="" title="Site">
+            <a href="https://www.etsy.com/shop/cynydd/" title="Site">
               Cynydd
             </a>
           </li>
           <li>
-            <a href="" title="Facebook">
+            <a href="https://www.facebook.com/cynyddshop/" title="Facebook">
               <img src={fbIcon} alt="facebook" className={teamStyles.icon} />
             </a>
           </li>
           <li>
-            <a href="" title="Instagram">
+            <a href="https://www.instagram.com/cynydd/?hl=fr" title="Instagram">
               <img src={itIcon} alt="instagram" className={teamStyles.icon} />
             </a>
           </li>
@@ -54,12 +54,15 @@ const Team = ({ sal }) => (
         <span className={teamStyles.name}>Caroline</span>
         <ul className={teamStyles.teamLinks}>
           <li>
-            <a href="" title="Site">
+            <a href="http://artcaroline.etsy.com/" title="Site">
               Art'Caroline
             </a>
           </li>
           <li>
-            <a href="" title="Facebook">
+            <a
+              href="https://www.facebook.com/artcarolinecreation/"
+              title="Facebook"
+            >
               <img src={fbIcon} alt="facebook" className={teamStyles.icon} />
             </a>
           </li>

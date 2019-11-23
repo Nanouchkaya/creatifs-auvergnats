@@ -1,3 +1,4 @@
+/* eslint-disable brace-style */
 import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
