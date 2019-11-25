@@ -35,12 +35,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.7,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "GatsbyJS",
@@ -55,3 +49,10 @@ module.exports = {
     },
   ],
 }
+
+// {
+//   resolve: `gatsby-plugin-scroll-reveal`,
+//   options: {
+//     threshold: 0.7,
+//   },
+// },

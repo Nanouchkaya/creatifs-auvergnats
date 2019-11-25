@@ -1,6 +1,6 @@
 import React from "react"
 import Lottie from "react-lottie"
-import animationData from "../lotties/11059-scroll-down.json"
+import animationData from "../lotties/scroll-down.json"
 
 const ScrollDownLottie = () => {
   const defaultOptions = {
