@@ -55,6 +55,11 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+  const menuBurgerClass = classnames(
+    headerStyles.navbarList,
+    { [headerStyles.open]: isOpen },
+    { [headerStyles.colored]: window.scrollY > window.innerHeight }
+  )
 
   // Close the menu by clicking outside of it
   const node = useRef()
@@ -93,13 +98,7 @@ const Header = () => {
               <div />
             </button>
           )}
-          <ul
-            className={classnames(
-              headerStyles.navbarList,
-              { [headerStyles.open]: isOpen },
-              { [headerStyles.colored]: window.scrollY > window.innerHeight}
-            )}
-          >
+          <ul className={menuBurgerClass}>
             {isDesktopOrLaptop && (
               <li>
                 <a href="/">
