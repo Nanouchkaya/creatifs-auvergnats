@@ -71,7 +71,7 @@
   }
 
   &-list {
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,.6);
     border-bottom: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -109,7 +109,7 @@
   }
 
   .colored {
-    background: linear-gradient(265deg, rgba(213,194,164,.3) 0%, rgba(174,165,168,.3) 28%, rgba(156,78,76,.3) 61%, rgba(183,150,116,.3) 93%);
+    background: linear-gradient(265deg, rgba(213,194,164,.5) 0%, rgba(174,165,168,.8) 28%, rgba(156,78,76,.8) 61%, rgba(183,150,116,.8) 93%);
   }
 }
 
@@ -163,6 +163,7 @@
     }
 
     .colored {
+      background: linear-gradient(265deg, rgba(213,194,164,.5) 0%, rgba(174,165,168,.5) 28%, rgba(156,78,76,.5) 61%, rgba(183,150,116,.5) 93%);
       li:first-child {
         .logoNav {
           opacity: 1;

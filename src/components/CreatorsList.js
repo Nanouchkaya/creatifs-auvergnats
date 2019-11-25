@@ -3,14 +3,8 @@ import React from "react"
 // Locals imports
 import creatorslistStyles from "../assets/styles/creatorsList.module.scss"
 
-const CreatorsList = ({ sal }) => (
-  <div
-    className={creatorslistStyles.container}
-    data-sal={sal[0]}
-    data-sal-delay={sal[1]}
-    data-sal-easing={sal[2]}
-    id="creators"
-  >
+const CreatorsList = () => (
+  <div className={creatorslistStyles.container} id="creators">
     <h1 className={creatorslistStyles.title}>
       Découvrez nos créateurs de talent
     </h1>

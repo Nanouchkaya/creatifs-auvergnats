@@ -6,7 +6,7 @@ import LegalMention from "./LegalMention"
 import fbIcon from "../assets/images/icons/facebook.png"
 import itIcon from "../assets/images/icons/instagram.png"
 
-const Footer = ({ sal }) => {
+const Footer = () => {
   const [state, setState] = useState({ status: false })
 
   const displayLegalMention = e => {
@@ -15,12 +15,7 @@ const Footer = ({ sal }) => {
     })
   }
   return (
-    <footer
-      className={footerStyles.footer}
-      data-sal={sal[0]}
-      data-sal-delay={sal[1]}
-      data-sal-easing={sal[2]}
-    >
+    <footer className={footerStyles.footer}>
       <a href="https://www.facebook.com/teametsyauvergne" title="Facebook">
         <img src={fbIcon} alt="facebook" className={footerStyles.icon} />
       </a>

@@ -13,22 +13,19 @@ import Footer from "../components/Footer"
 import Head from "../components/Head"
 
 const IndexPage = () => {
-  // generals values for scroll reveal data attributes for each main components
-  const salParams = ["fade", "400", "ease-in"]
-
   return (
     <div id={indexStyles.wrapper}>
       <Head />
       <Header />
       <main className={indexStyles.main}>
-        <Intro sal={salParams} />
-        <Team sal={salParams} />
-        <NextEvent sal={salParams} />
-        <CreatorsList sal={salParams} />
-        <PastEvents sal={salParams} />
-        <Contact sal={salParams} />
+        <Intro />
+        <Team />
+        <NextEvent />
+        <CreatorsList />
+        <PastEvents />
+        <Contact />
       </main>
-      <Footer sal={salParams} />
+      <Footer />
     </div>
   )
 }

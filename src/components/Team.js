@@ -7,14 +7,8 @@ import TeamTwo from "../assets/images/caroline.jpg"
 import fbIcon from "../assets/images/icons/facebook.png"
 import itIcon from "../assets/images/icons/instagram.png"
 
-const Team = ({ sal }) => (
-  <div
-    className={teamStyles.container}
-    data-sal={sal[0]}
-    data-sal-delay={sal[1]}
-    data-sal-easing={sal[2]}
-    id="team"
-  >
+const Team = () => (
+  <div className={teamStyles.container} id="team">
     <h1 className={teamStyles.title}>Les Organisatrices</h1>
 
     <div className={teamStyles.team}>

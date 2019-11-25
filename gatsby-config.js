@@ -15,7 +15,7 @@ module.exports = {
     portfolio: "coding-claudine.eu",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-react-helmet", // head
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
@@ -24,7 +24,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    // plugins pour les images
+    // plugins for images
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -34,6 +34,7 @@ module.exports = {
         path: `${__dirname}/src/assets/images/`,
       },
     },
+    // plugin SEO
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

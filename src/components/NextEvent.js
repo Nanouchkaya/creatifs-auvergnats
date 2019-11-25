@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 // Locals imports
 import nexteventStyles from "../assets/styles/nextEvent.module.scss"
 
-const NextEvent = ({ sal }) => {
+const NextEvent = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       file(relativePath: { regex: "/next_event.jpg/" }) {
@@ -20,13 +20,7 @@ const NextEvent = ({ sal }) => {
   `)
 
   return (
-    <div
-      className={nexteventStyles.container}
-      data-sal={sal[0]}
-      data-sal-delay={sal[1]}
-      data-sal-easing={sal[2]}
-      id="nextevent"
-    >
+    <div className={nexteventStyles.container} id="nextevent">
       <h1 className={nexteventStyles.title}>Evénement à venir</h1>
       <a
         className={nexteventStyles.link}

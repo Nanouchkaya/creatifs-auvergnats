@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 // Locals imports
 import pasteventsStyles from "../assets/styles/pastEvents.module.scss"
 
-const PastEvents = ({ sal }) => {
+const PastEvents = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { regex: "/photos/" } }) {
@@ -25,13 +25,7 @@ const PastEvents = ({ sal }) => {
   `)
 
   return (
-    <div
-      className={pasteventsStyles.container}
-      data-sal={sal[0]}
-      data-sal-delay={sal[1]}
-      data-sal-easing={sal[2]}
-      id="pastevents"
-    >
+    <div className={pasteventsStyles.container} id="pastevents">
       <h1 className={pasteventsStyles.title}>Nos marchés terminés</h1>
       <p className={pasteventsStyles.paragraphe}>
         Depuis 2016, nous organisons des événements et participons à des marchés

@@ -3,7 +3,7 @@ import React, { useState } from "react"
 // Locals imports
 import contactStyles from "../assets/styles/contact.module.scss"
 
-const Contact = ({ sal }) => {
+const Contact = () => {
   const [state, setState] = useState({ status: "" })
 
   const handleChange = e => {
@@ -35,13 +35,7 @@ const Contact = ({ sal }) => {
   const { status } = state
 
   return (
-    <div
-      className={contactStyles.container}
-      data-sal={sal[0]}
-      data-sal-delay={sal[1]}
-      data-sal-easing={sal[2]}
-      id="contact"
-    >
+    <div className={contactStyles.container} id="contact">
       <h1 className={contactStyles.title}>Nous contacter</h1>
       <form
         className={contactStyles.form}

@@ -3,14 +3,8 @@ import React from "react"
 // Locals imports
 import introStyles from "../assets/styles/intro.module.scss"
 
-const Intro = ({ sal }) => (
-  <div
-    className={introStyles.container}
-    data-sal={sal[0]}
-    data-sal-delay={sal[1]}
-    data-sal-easing={sal[2]}
-    id="intro"
-  >
+const Intro = () => (
+  <div className={introStyles.container} id="intro">
     <h1 className={introStyles.title}>Les créatifs auvergnats</h1>
     <h2 className={introStyles.subtitle}>
       Par la team <strong>Etsy</strong> auvergne

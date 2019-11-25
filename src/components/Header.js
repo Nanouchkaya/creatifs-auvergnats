@@ -1,5 +1,5 @@
 /* eslint-disable brace-style */
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
@@ -10,6 +10,7 @@ import classnames from "classnames"
 import headerStyles from "../assets/styles/header.module.scss"
 import logo from "../assets/images/logo_white.png"
 import ScrollDownLottie from "./ScrollDownLottie"
+import { useOnClickOutside } from "../hooks"
 
 const Header = () => {
   // fetch header image
@@ -25,10 +26,14 @@ const Header = () => {
     }
   `)
 
-  // add listener on scroll to change the navigation bar class
+  // add listener on scroll to change the navigation styles
   useEffect(() => {
     window.addEventListener("scroll", changeNavBg)
+    return () => {
+      document.removeEventListener("scroll", changeNavBg)
+    }
   }, [])
+
   // css class changes when the navigation bar is out of header image
   const changeNavBg = () => {
     const navbar = document.getElementsByTagName("ul")[0]
@@ -45,11 +50,15 @@ const Header = () => {
   })
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 980px)" })
 
-  // Define hamburger menu (mobile device) state
+  // Define hamburger menu state (mobile)
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+  // Close the menu by clicking outside of it
+  const node = useRef()
+  useOnClickOutside(node, () => setIsOpen(false))
 
   return (
     <BackgroundImage
@@ -70,7 +79,7 @@ const Header = () => {
         scrollDuration="200"
         headerBackground="true"
       >
-        <nav className={headerStyles.navbar}>
+        <nav className={headerStyles.navbar} ref={node}>
           {isTabletOrMobile && (
             <button
               type="button"
@@ -85,9 +94,11 @@ const Header = () => {
             </button>
           )}
           <ul
-            className={classnames(headerStyles.navbarList, {
-              [headerStyles.open]: isOpen,
-            })}
+            className={classnames(
+              headerStyles.navbarList,
+              { [headerStyles.open]: isOpen },
+              { [headerStyles.colored]: window.scrollY > window.innerHeight}
+            )}
           >
             {isDesktopOrLaptop && (
               <li>
