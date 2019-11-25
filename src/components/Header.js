@@ -1,28 +1,18 @@
 /* eslint-disable brace-style */
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import { useMediaQuery } from "react-responsive"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import ScrollspyNav from "react-scrollspy-nav"
+import classnames from "classnames"
 
 // Locals imports
 import headerStyles from "../assets/styles/header.module.scss"
-//import banner from "../assets/images/header.jpg"
 import logo from "../assets/images/logo_white.png"
+import ScrollDownLottie from "./ScrollDownLottie"
 
 const Header = () => {
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavBg)
-  }, [])
-
-  const changeNavBg = () => {
-    const navbar = document.getElementsByTagName("nav")[0]
-    if (window.scrollY > window.innerHeight) {
-      navbar.classList.add(headerStyles.colored)
-    } else {
-      navbar.classList.remove(headerStyles.colored)
-    }
-  }
-
+  // fetch header image
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { regex: "/header.jpg/" }) {
@@ -34,6 +24,32 @@ const Header = () => {
       }
     }
   `)
+
+  // add listener on scroll to change the navigation bar class
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavBg)
+  }, [])
+  // css class changes when the navigation bar is out of header image
+  const changeNavBg = () => {
+    const navbar = document.getElementsByTagName("ul")[0]
+    if (window.scrollY > window.innerHeight) {
+      navbar.classList.add(headerStyles.colored)
+    } else {
+      navbar.classList.remove(headerStyles.colored)
+    }
+  }
+
+  // Define media query
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 980px)",
+  })
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 980px)" })
+
+  // Define hamburger menu (mobile device) state
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <BackgroundImage
@@ -55,16 +71,35 @@ const Header = () => {
         headerBackground="true"
       >
         <nav className={headerStyles.navbar}>
-          <ul>
-            <li>
-              <a href="/">
-                <img
-                  src={logo}
-                  alt="Logo Créatifs auvergnats"
-                  className={headerStyles.logoNav}
-                />
-              </a>
-            </li>
+          {isTabletOrMobile && (
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className={classnames(headerStyles.menuButton, {
+                [headerStyles.open]: isOpen,
+              })}
+            >
+              <div />
+              <div />
+              <div />
+            </button>
+          )}
+          <ul
+            className={classnames(headerStyles.navbarList, {
+              [headerStyles.open]: isOpen,
+            })}
+          >
+            {isDesktopOrLaptop && (
+              <li>
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="Logo Créatifs auvergnats"
+                    className={headerStyles.logoNav}
+                  />
+                </a>
+              </li>
+            )}
             <li>
               <a href="#intro">Qui sommes-nous ?</a>
             </li>
@@ -78,7 +113,7 @@ const Header = () => {
               <a href="#creators">Les créatifs</a>
             </li>
             <li>
-              <a href="#pastevents">Galerie</a>
+              <a href="#pastevents">Nos marchés</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -86,12 +121,12 @@ const Header = () => {
           </ul>
         </nav>
       </ScrollspyNav>
-
       <img
         src={logo}
         alt="Logo Créatifs auvergnats"
         className={headerStyles.logoBan}
       />
+      <ScrollDownLottie />
     </BackgroundImage>
   )
 }

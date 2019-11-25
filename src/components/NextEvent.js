@@ -46,15 +46,16 @@ const NextEvent = ({ sal }) => {
         savoir-faire... et des cadeaux de Noël uniques !
       </p>
       <div className={nexteventStyles.paragraphe}>
-        ⭐ Samedi 7 décembre 2019 de 10h à 18h et dimanche 8 décembre 2019 de 10h
-        à 17h.
+        ⭐ Samedi 7 décembre 2019 de 10h à 18h et dimanche 8 décembre 2019 de
+        10h à 17h.
         <address>
           Restaurant Les Artistes, 97 avenue de la république - 63000
           Clermont-Ferrand.
         </address>
       </div>
       <p className={nexteventStyles.paragraphe}>
-        🚉 TRAM à proximité arrêt 1er mai et parking gratuit pour les visiteurs 👍
+        🚉 TRAM à proximité arrêt 1er mai et parking gratuit pour les visiteurs
+        👍
       </p>
     </div>
   )

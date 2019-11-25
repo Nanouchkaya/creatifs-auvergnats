@@ -21,7 +21,6 @@ const LegalMention = () => {
       </p>
 
       <ul className={mentionLegalStyles.liste}>
-        <li>Tél : 00.06.66.06.66</li>
         <li>
           Collectif les Créatifs Auvergnats, 2 rue Grégoire de Tours 63000
           Clermont-Ferrand

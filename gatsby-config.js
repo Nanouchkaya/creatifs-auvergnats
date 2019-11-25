@@ -34,7 +34,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images/`,
       },
     },
-    "gatsby-plugin-scroll-reveal",
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.7,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
