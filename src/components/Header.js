@@ -58,7 +58,7 @@ const Header = () => {
   const menuBurgerClass = classnames(
     headerStyles.navbarList,
     { [headerStyles.open]: isOpen },
-    { [headerStyles.colored]: window.scrollY > window.innerHeight }
+    headerStyles.colored
   )
 
   // Close the menu by clicking outside of it
