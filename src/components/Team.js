@@ -36,7 +36,8 @@ const Team = () => (
           </li>
         </ul>
         <p className={teamStyles.role}>
-          S'occupe des réseaux sociaux et de répondre aux mails
+          Gère les réseaux sociaux, les réponses aux messages privés et aux
+          mails les éléments de communication visuelle.
         </p>
       </div>
 
@@ -66,7 +67,10 @@ const Team = () => (
             </a>
           </li>
         </ul>
-        <p className={teamStyles.role}>S'occupe de dénicher de super lieux</p>
+        <p className={teamStyles.role}>
+          Gère le côté logistique, les réponses aux messages privés et aux
+          mails, les différents ateliers.
+        </p>
       </div>
     </div>
   </div>

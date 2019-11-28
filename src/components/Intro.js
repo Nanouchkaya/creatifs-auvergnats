@@ -21,7 +21,7 @@ const Intro = () => (
     </p>
     <p className={introStyles.paragraphe}>
       Plusieurs fois dans l'année, nous organisons des
-      <strong>marchés de créateurs</strong> pour promouvoir le fait-main
+      <strong> marchés de créateurs</strong> pour promouvoir le fait-main
       auvergnat ainsi que des apéros créateurs pour échanger dans nos métiers.
       Notre souhait pour l'avenir est de mettre en place des
       <strong>boutiques éphémères</strong> ainsi que de nombreux marchés de
