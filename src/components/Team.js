@@ -34,7 +34,7 @@ const Team = () => {
   `)
 
   const persons = data.allContentfulOrganisateur.edges
-  console.log(persons)
+
   return (
     <div className={teamStyles.container} id="team">
       <h1 className={teamStyles.title}>Les Organisatrices</h1>
