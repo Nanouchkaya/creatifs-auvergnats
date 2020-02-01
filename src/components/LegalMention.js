@@ -35,11 +35,21 @@ const LegalMention = () => {
         </li>
       </ul>
 
-      <h2 className={mentionLegalStyles.subtitle}>Hébergement</h2>
+      <h2 className={mentionLegalStyles.subtitle}>
+        Hébergement et développement
+      </h2>
       <p className={mentionLegalStyles.paragraphe}>
         Le site est hébergé par{" "}
         <a className={mentionLegalStyles.link} href="https://www.netlify.com/">
           Netlify
+        </a>
+        . Le contenu est édité et hébergé avec ContenfulCMS. <br />
+        Le présent site a été développé sous Gatsby par{" "}
+        <a
+          className={mentionLegalStyles.link}
+          href="https://www.coding-claudine.eu"
+        >
+          Claudine Brun
         </a>
         .
       </p>
@@ -63,20 +73,6 @@ const LegalMention = () => {
         <a className={mentionLegalStyles.link} href="https://icons8.com/">
           Icons8
         </a>
-      </p>
-
-      <h2 className={mentionLegalStyles.subtitle}>Développement</h2>
-      <p className={mentionLegalStyles.paragraphe}>
-        Le présent site a été développé bénévolement par{" "}
-        <a
-          className={mentionLegalStyles.link}
-          href="https://www.coding-claudine.eu"
-        >
-          Claudine Brun
-        </a>
-        . Il utilise une architecture JAMstack et les technologies suivantes :
-        ReactJs, Gatsby, Sass, Contentful CMS (pour la gestion du contenu) et
-        Formspree (pour la gestion des données du formulaire de contact).
       </p>
 
       <h2 className={mentionLegalStyles.subtitle}>Cookies</h2>

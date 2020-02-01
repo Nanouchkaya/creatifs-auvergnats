@@ -2,12 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 
-const Head = ({ page }) => {
+const Head = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -16,10 +17,7 @@ const Head = ({ page }) => {
   return (
     <Helmet>
       <html lang="fr" />
-      <meta
-        name="description"
-        content="Collectif Les Créatifs Auvergnats, Etsy, fait-main, local"
-      />
+      <meta name="description" content={data.site.siteMetadata.description} />
       <title>{data.site.siteMetadata.title}</title>
     </Helmet>
   )

@@ -57,5 +57,12 @@
 @media (min-width: 768px) {
   .team {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .profil {
+      max-width: 33%;
+      min-width: 320px;
+    }
   }
 }

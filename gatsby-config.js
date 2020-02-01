@@ -4,9 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Les Creatifs Auvergnats",
+    description: "Collectif Les Créatifs Auvergnats, Etsy, fait-main, local",
     mail: "lescreatifsauvergnats@gmail.com",
     instagram: "https://www.instagram.com/teametsyauvergne",
     facebook: "https://www.facebook.com/teametsyauvergne",
@@ -22,6 +27,17 @@ module.exports = {
       options: {
         name: "src",
         path: `${__dirname}/src/`,
+      },
+    },
+    // improves build speed
+    "gatsby-plugin-netlify-cache",
+    // plugins for contenful
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `lxqqbd4acgor`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     // plugins for images
@@ -46,6 +62,22 @@ module.exports = {
         display: "standalone",
         icon: "static/favicon.ico",
         crossOrigin: `use-credentials`,
+      },
+    },
+    // plugin to read markdown in long text from cms
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
       },
     },
   ],

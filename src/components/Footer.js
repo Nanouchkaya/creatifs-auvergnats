@@ -16,6 +16,7 @@ const Footer = () => {
   }
   return (
     <footer className={footerStyles.footer}>
+      {state.status && <LegalMention className={footerStyles.legalmention} />}
       <a href="https://www.facebook.com/teametsyauvergne" title="Facebook">
         <img src={fbIcon} alt="facebook" className={footerStyles.icon} />
       </a>
@@ -29,7 +30,6 @@ const Footer = () => {
       >
         Mentions légales
       </button>
-      {state.status && <LegalMention className={footerStyles.legalmention} />}
     </footer>
   )
 }
