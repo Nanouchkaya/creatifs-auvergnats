@@ -8,49 +8,50 @@ import nexteventStyles from "../assets/styles/nextEvent.module.scss"
 
 const NextEvent = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
-      file(relativePath: { regex: "/next_event.jpg/" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+    {
+      contentfulSectionSimple(contentful_id: { eq: "4Gkro9hUVfXtQg6lr5QUbh" }) {
+        contenu {
+          contenu
+        }
+        titreSection
+        image {
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
           }
         }
+        link
       }
     }
   `)
 
+  const image = data.contentfulSectionSimple.image.fluid
+
   return (
     <div className={nexteventStyles.container} id="nextevent">
-      <h1 className={nexteventStyles.title}>Evénement à venir</h1>
+      <h2 className={nexteventStyles.title}>
+        {data.contentfulSectionSimple.titreSection}
+      </h2>
       <a
         className={nexteventStyles.link}
-        href="https://www.facebook.com/events/475607999707671/"
+        href={data.contentfulSectionSimple.link}
       >
         <Img
           className={nexteventStyles.banner}
-          fluid={data.file.childImageSharp.fluid}
+          fluid={image}
           alt="Marché de Noel - 7 et 8 décembre 2019"
         />
       </a>
-      <p className={nexteventStyles.paragraphe}>
-        Etsy Made in France célèbre Noël pour sa 6ème édition 🎄
-        <br />
-        Venez rencontrer les créateurs de votre région, tous indépendants et
-        passionnés, et découvrir leurs histoires, leurs créations et leur
-        savoir-faire... et des cadeaux de Noël uniques !
-      </p>
-      <div className={nexteventStyles.paragraphe}>
-        ⭐ Samedi 7 décembre 2019 de 10h à 18h et dimanche 8 décembre 2019 de
-        10h à 17h.
-        <address>
-          Restaurant Les Artistes, 97 avenue de la république - 63000
-          Clermont-Ferrand.
-        </address>
-      </div>
-      <p className={nexteventStyles.paragraphe}>
-        🚉 TRAM à proximité arrêt 1er mai et parking gratuit pour les visiteurs
-        👍
-      </p>
+      <p
+        className={nexteventStyles.paragraphe}
+        dangerouslySetInnerHTML={{
+          __html: data.contentfulSectionSimple.contenu.contenu,
+        }}
+      />
     </div>
   )
 }

@@ -37,7 +37,7 @@ const Team = () => {
 
   return (
     <div className={teamStyles.container} id="team">
-      <h1 className={teamStyles.title}>Les Organisatrices</h1>
+      <h2 className={teamStyles.title}>Les Organisatrices</h2>
       <div className={teamStyles.team}>
         {persons.map(person => {
           const photoURL = person.node.photo.file.url

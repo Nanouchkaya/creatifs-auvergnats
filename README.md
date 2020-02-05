@@ -16,10 +16,11 @@ A quick look at the technolgies use for it:
     - Sass
     - CSS module
     - AirBnB Lottie
+    - Netlify
+    - ContentfulCMS
 
     * Gatsby plugins : 
     - React Helmet
-    - gatsby-images & background-images
     - sharp & transformer-sharp
     - source-filesystem
     - manifest
@@ -29,5 +30,5 @@ A quick look at the technolgies use for it:
 ## 🧐 Issues to fix
 
 - events images over navigation on scroll
-- scroll reveal plugin doesn't work on mobile (temporarily removed) -> warning message "componentWillUpdate" in console
+- scroll reveal plugin doesn't work on mobile (temporarily removed) -> warning console message "componentWillUpdate"
 

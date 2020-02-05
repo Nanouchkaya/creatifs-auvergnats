@@ -39,7 +39,7 @@ const LegalMention = () => {
         Hébergement et développement
       </h2>
       <p className={mentionLegalStyles.paragraphe}>
-        Le site est hébergé par{" "}
+        Le site est déployé sous{" "}
         <a className={mentionLegalStyles.link} href="https://www.netlify.com/">
           Netlify
         </a>
@@ -47,7 +47,7 @@ const LegalMention = () => {
         Le présent site a été développé sous Gatsby par{" "}
         <a
           className={mentionLegalStyles.link}
-          href="https://www.coding-claudine.eu"
+          href="https://www.linkedin.com/in/claudine-brun/?locale=fr_FR"
         >
           Claudine Brun
         </a>

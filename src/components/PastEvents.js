@@ -26,7 +26,7 @@ const PastEvents = () => {
 
   return (
     <div className={pasteventsStyles.container} id="pastevents">
-      <h1 className={pasteventsStyles.title}>Nos marchés terminés</h1>
+      <h2 className={pasteventsStyles.title}>Nos marchés terminés</h2>
       <p className={pasteventsStyles.paragraphe}>
         Depuis 2016, nous organisons des événements et participons à des marchés
         de créateurs. Apprenez en plus sur l'ambiance du collectif à travers

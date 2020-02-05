@@ -17,7 +17,7 @@ module.exports = {
     facebook: "https://www.facebook.com/teametsyauvergne",
     privateGroup: "https://www.facebook.com/groups/512000855657242",
     author: "Claudine Brun",
-    portfolio: "coding-claudine.eu",
+    site: "coding-claudine.eu",
   },
   plugins: [
     "gatsby-plugin-react-helmet", // head
@@ -54,8 +54,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "Créatifs Auvergnats",
+        short_name: "Créatifs A.",
         start_url: "/",
         background_color: "rgb(78, 28, 28)",
         theme_color: "rgb(78, 28, 28)",

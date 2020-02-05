@@ -6,31 +6,29 @@ import introStyles from "../assets/styles/intro.module.scss"
 const Intro = () => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulSectionSimple {
-        edges {
-          node {
-            contenu {
-              contenu
-            }
-            titreSection
-          }
+      contentfulSectionSimple(contentful_id: { eq: "Rd5xmCgxTraBUG0zCRX4N" }) {
+        contenu {
+          contenu
         }
+        titreSection
       }
     }
   `)
 
-  const texts = data.allContentfulSectionSimple.edges
-
-  return texts.map(text => (
+  return (
     <div className={introStyles.container} id="intro" key="introductionSection">
-      <h1 className={introStyles.title}>{text.node.titreSection}</h1>
-      <h2 className={introStyles.subtitle}>Par la team Etsy Auvergne</h2>
+      <h2 className={introStyles.title}>
+        {data.contentfulSectionSimple.titreSection}
+      </h2>
+      <h3 className={introStyles.subtitle}>Par la team Etsy Auvergne</h3>
       <p
         className={introStyles.paragraphe}
-        dangerouslySetInnerHTML={{ __html: text.node.contenu.contenu }}
+        dangerouslySetInnerHTML={{
+          __html: data.contentfulSectionSimple.contenu.contenu,
+        }}
       />
     </div>
-  ))
+  )
 }
 
 export default Intro

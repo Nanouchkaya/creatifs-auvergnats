@@ -5,9 +5,9 @@ import creatorslistStyles from "../assets/styles/creatorsList.module.scss"
 
 const CreatorsList = () => (
   <div className={creatorslistStyles.container} id="creators">
-    <h1 className={creatorslistStyles.title}>
+    <h2 className={creatorslistStyles.title}>
       Découvrez nos créateurs de talent
-    </h1>
+    </h2>
     <p className={creatorslistStyles.paragraphe}>
       Ci-dessous, la liste des créateurs qui ont rejoins notre collectif. Ce
       sont ces créateurs que vous pourrez être amenés à découvrir lors de nos
