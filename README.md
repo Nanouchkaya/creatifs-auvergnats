@@ -6,18 +6,16 @@ Website develop with Gatsby for the association "Collectif Les Créatifs Auvergn
 
 A quick look at the technolgies use for it:
 
-    - ReactJS (with hooks)
-    - Gatsby*
+    - Gatsby* /ReactJS (with hooks)
+    - Netlify
+    - ContentfulCMS
+    - GraphQL
     - ESLint
     - Prettier
     - Yarn
-    - Node
-    - GraphQL
     - Sass
     - CSS module
     - AirBnB Lottie
-    - Netlify
-    - ContentfulCMS
 
     * Gatsby plugins : 
     - React Helmet
@@ -29,6 +27,5 @@ A quick look at the technolgies use for it:
 
 ## 🧐 Issues to fix
 
-- events images over navigation on scroll
 - scroll reveal plugin doesn't work on mobile (temporarily removed) -> warning console message "componentWillUpdate"
 

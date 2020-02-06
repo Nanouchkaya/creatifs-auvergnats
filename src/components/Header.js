@@ -1,5 +1,5 @@
 /* eslint-disable brace-style */
-import React, { useEffect, useState, useRef } from "react"
+import React, { useState, useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
@@ -26,24 +26,6 @@ const Header = () => {
     }
   `)
 
-  // add listener on scroll to change the navigation styles
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavBg)
-    return () => {
-      document.removeEventListener("scroll", changeNavBg)
-    }
-  }, [])
-
-  // css class changes when the navigation bar is out of header image
-  const changeNavBg = () => {
-    const navbar = document.getElementsByTagName("ul")[0]
-    if (window.scrollY > window.innerHeight) {
-      navbar.classList.add(headerStyles.colored)
-    } else {
-      navbar.classList.remove(headerStyles.colored)
-    }
-  }
-
   // Define media query
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 980px)",
@@ -55,11 +37,9 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
-  const menuBurgerClass = classnames(
-    headerStyles.navbarList,
-    { [headerStyles.open]: isOpen },
-    headerStyles.colored
-  )
+  const menuBurgerClass = classnames(headerStyles.navbarList, {
+    [headerStyles.open]: isOpen,
+  })
 
   // Close the menu by clicking outside of it
   const node = useRef()
@@ -111,22 +91,34 @@ const Header = () => {
               </li>
             )}
             <li>
-              <a href="#intro">Qui sommes-nous ?</a>
+              <a href="#intro" onClick={toggleMenu}>
+                Qui sommes-nous ?
+              </a>
             </li>
             <li>
-              <a href="#team">Organisateurs</a>
+              <a href="#team" onClick={toggleMenu}>
+                Organisateurs
+              </a>
             </li>
             <li>
-              <a href="#nextevent">Prochain événement</a>
+              <a href="#nextevent" onClick={toggleMenu}>
+                Prochain événement
+              </a>
             </li>
             <li>
-              <a href="#creators">Les créatifs</a>
+              <a href="#creators" onClick={toggleMenu}>
+                Les créatifs
+              </a>
             </li>
             <li>
-              <a href="#pastevents">Nos marchés</a>
+              <a href="#pastevents" onClick={toggleMenu}>
+                Nos marchés
+              </a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact" onClick={toggleMenu}>
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
