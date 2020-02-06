@@ -1,18 +1,21 @@
 // FONTS
 @font-face {
   font-family: "Blooming Elegant";
-  src: url('../fonts/Blooming_Elegant_Sans.otf') format("opentype")
+  src: url('../fonts/Blooming_Elegant_Sans.otf') format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Madgue Script";
   src: url('../fonts/Madgue_Script.otf') format("opentype"),
-  url('../fonts/Madgue_Script.ttf') format("truetype")
+  url('../fonts/Madgue_Script.ttf') format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Guardian Egyptian";
-  src: url('../fonts/GuardianEgyptianThin.otf') format("opentype")
+  src: url('../fonts/GuardianEgyptianThin.otf') format("opentype");
+  font-display: swap;
 }
 
 $titleFont: "Madgue Script", serif;

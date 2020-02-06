@@ -14,11 +14,12 @@
   margin: 3rem 0;
 
   .banner {
-    width: 100%;
+    width: 85%;
     transition: 200ms ease-in;
     border-radius: 5px;
     border:2px solid white;
     position:relative;
+    margin: auto;
     z-index: 0;
   }
 

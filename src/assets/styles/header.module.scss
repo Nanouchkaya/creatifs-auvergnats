@@ -26,6 +26,8 @@
   width: 100%;
   height: 84px;
   z-index: 9;
+  opacity: 0;
+  animation: fromTop 400ms ease-in-out 300ms forwards;
 
   .menu-button {
     top: 1rem;
