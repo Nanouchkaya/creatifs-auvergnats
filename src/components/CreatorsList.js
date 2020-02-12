@@ -7,6 +7,12 @@ import creatorslistStyles from "../assets/styles/creatorsList.module.scss"
 const CreatorsList = () => {
   const data = useStaticQuery(graphql`
     {
+      contentfulSectionSimple(contentful_id: { eq: "5zIf7UBSEntuOGwTR5xyOE" }) {
+        contenu {
+          contenu
+        }
+        titreSection
+      }
       allContentfulCategorieDeProduit(sort: { order: ASC, fields: name }) {
         edges {
           node {
@@ -28,14 +34,10 @@ const CreatorsList = () => {
   return (
     <div className={creatorslistStyles.container} id="creators">
       <h2 className={creatorslistStyles.title}>
-        Découvrez nos créateurs de talent
+        {data.contentfulSectionSimple.titreSection}
       </h2>
       <p className={creatorslistStyles.paragraphe}>
-        Ci-dessous, la liste des créateurs qui ont rejoins notre collectif. Ce
-        sont ces créateurs que vous pourrez être amenés à découvrir lors de nos
-        événements. Si vous êtes vous même un artisan du fait-main et que vous
-        souhaitez nous rejoindre, il vous suffit de nous contacter grâce au
-        formulaire dédié.
+        {data.contentfulSectionSimple.contenu.contenu}
       </p>
 
       <div className={creatorslistStyles.categories}>
