@@ -7,7 +7,7 @@ import creatorslistStyles from "../assets/styles/creatorsList.module.scss"
 const CreatorsList = () => {
   const data = useStaticQuery(graphql`
     {
-      allContentfulCategorieDeProduit {
+      allContentfulCategorieDeProduit(sort: { order: ASC, fields: name }) {
         edges {
           node {
             contentful_id

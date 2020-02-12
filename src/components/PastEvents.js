@@ -8,6 +8,12 @@ import pasteventsStyles from "../assets/styles/pastEvents.module.scss"
 const PastEvents = () => {
   const data = useStaticQuery(graphql`
     query {
+      contentfulSectionSimple(contentful_id: { eq: "1dRR3AoldfRZXNaq17fA5q" }) {
+        contenu {
+          contenu
+        }
+        titreSection
+      }
       allFile(filter: { relativeDirectory: { regex: "/photos/" } }) {
         edges {
           node {
@@ -21,16 +27,29 @@ const PastEvents = () => {
           }
         }
       }
+      allContentfulEvenementTermine(sort: { fields: createdAt, order: DESC }) {
+        edges {
+          node {
+            id
+            date
+            link
+            title
+            address
+          }
+        }
+      }
     }
   `)
 
+  const events = data.allContentfulEvenementTermine.edges
+
   return (
     <div className={pasteventsStyles.container} id="pastevents">
-      <h2 className={pasteventsStyles.title}>Nos marchés terminés</h2>
+      <h2 className={pasteventsStyles.title}>
+        {data.contentfulSectionSimple.titreSection}
+      </h2>
       <p className={pasteventsStyles.paragraphe}>
-        Depuis 2016, nous organisons des événements et participons à des marchés
-        de créateurs. Apprenez en plus sur l'ambiance du collectif à travers
-        notre galerie de photos ci-dessous.
+        {data.contentfulSectionSimple.contenu.contenu}
       </p>
       <div className={pasteventsStyles.gallery}>
         {data.allFile.edges.map(({ node }) => {
@@ -46,93 +65,22 @@ const PastEvents = () => {
       </div>
 
       <ul className={pasteventsStyles.list}>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Etsy Made in France Spring
-          </h3>
-          <span className={pasteventsStyles.eventDate}>18 & 19 mai 2019 </span>
-          <address className={pasteventsStyles.eventAddress}>
-            Espace Epicentre Factory, 5 rue saint-dominque à Clermont-Ferrand
-          </address>
-          <a
-            className={pasteventsStyles.eventLink}
-            href="https://www.facebook.com/events/329957927706463/?acontext=%7B%22ref%22%3A51%2C%22source%22%3A5%2C%22action_history%22%3A[%7B%22surface%22%3A%22page%22%2C%22mechanism%22%3A%22main_list%22%2C%22extra_data%22%3A%22%5C%22[]%5C%22%22%7D]%2C%22has_source%22%3Atrue%7D"
-          >
-            Liste des créateurs participants
-          </a>
-        </li>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Etsy Made in France Edition de Noël
-          </h3>
-          <span className={pasteventsStyles.eventDate}>
-            8 & 9 décembre 2018
-          </span>
-          <address className={pasteventsStyles.eventAddress}>
-            Espace Epicentre Factory, 5 rue saint-dominque à Clermont-Ferrand
-          </address>
-          <a className={pasteventsStyles.eventLink} href="">
-            Liste des créateurs participants
-          </a>
-        </li>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Etsy Made in France Spring
-          </h3>
-          <span className={pasteventsStyles.eventDate}>2 & 3 juin 2019</span>
-          <address className={pasteventsStyles.eventAddress}>
-            Espace Epicentre Factory, 5 rue saint-dominque à Clermont-Ferrand
-          </address>
-          <a
-            className={pasteventsStyles.eventLink}
-            href="https://www.facebook.com/events/437276076700175/?acontext=%7B%22ref%22%3A51%2C%22source%22%3A5%2C%22action_history%22%3A[%7B%22surface%22%3A%22page%22%2C%22mechanism%22%3A%22main_list%22%2C%22extra_data%22%3A%22%5C%22[]%5C%22%22%7D]%2C%22has_source%22%3Atrue%7D"
-          >
-            Liste des créateurs participants
-          </a>
-        </li>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Etsy Made in France Edition de Noël
-          </h3>
-          <span className={pasteventsStyles.eventDate}>
-            8 & 9 décembre 2017
-          </span>
-          <address className={pasteventsStyles.eventAddress}>
-            Espace Epicentre Factory, 5 rue saint-dominque à Clermont-Ferrand
-          </address>
-          <a
-            className={pasteventsStyles.eventLink}
-            href="https://www.facebook.com/events/1900658503587072/?acontext=%7B%22ref%22%3A51%2C%22source%22%3A5%2C%22action_history%22%3A[%7B%22surface%22%3A%22page%22%2C%22mechanism%22%3A%22main_list%22%2C%22extra_data%22%3A%22%5C%22[]%5C%22%22%7D]%2C%22has_source%22%3Atrue%7D"
-          >
-            Liste des créateurs participants
-          </a>
-        </li>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Foire de Clermont-Cournon
-          </h3>
-          <span className={pasteventsStyles.eventDate}>
-            9 au 11 septembre 2017
-          </span>
-          <address className={pasteventsStyles.eventAddress}>
-            Grande Hall D'auvergne
-          </address>
-        </li>
-        <li className={pasteventsStyles.event}>
-          <h3 className={pasteventsStyles.eventName}>
-            Etsy Made in France Première Edition
-          </h3>
-          <span className={pasteventsStyles.eventDate}>26 novembre 2016</span>
-          <address className={pasteventsStyles.eventAddress}>
-            Showrom les Dilettantes à Clermont-Ferrand
-          </address>
-          <a
-            className={pasteventsStyles.eventLink}
-            href="https://www.facebook.com/events/1765180753741457/?acontext=%7B%22ref%22%3A51%2C%22source%22%3A5%2C%22action_history%22%3A[%7B%22surface%22%3A%22page%22%2C%22mechanism%22%3A%22main_list%22%2C%22extra_data%22%3A%22%5C%22[]%5C%22%22%7D]%2C%22has_source%22%3Atrue%7D"
-          >
-            Liste des créateurs participants
-          </a>
-        </li>
+        {events.map(event => (
+          <li className={pasteventsStyles.event}>
+            <h3 className={pasteventsStyles.eventName}>{event.node.title}</h3>
+            <span className={pasteventsStyles.eventDate}>
+              {event.node.date}
+            </span>
+            <address className={pasteventsStyles.eventAddress}>
+              {event.node.address}
+            </address>
+            {event.node.link && (
+              <a className={pasteventsStyles.eventLink} href={event.node.link}>
+                Liste des créateurs participants
+              </a>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   )
