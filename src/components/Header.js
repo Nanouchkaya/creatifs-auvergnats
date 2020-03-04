@@ -32,7 +32,7 @@ const Header = () => {
   })
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 980px)" })
 
-  // Define hamburger menu state (mobile)
+  // Define hamburger menu open state (mobile)
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => {
     setIsOpen(!isOpen)

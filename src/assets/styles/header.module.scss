@@ -17,7 +17,7 @@
   margin: auto;
   margin-top: calc(50vh - 20vw);
   mix-blend-mode: overlay;
-  opacity: 0;
+  opacity: 1;
   animation: dropSection 500ms ease-in-out 600ms forwards;
 }
 
@@ -145,8 +145,6 @@
       flex-grow: 6;
   
       .logoNav {
-        transition: 200ms ease;
-        opacity: 0;
         width: 90px;
         margin: .2rem 0;
       }

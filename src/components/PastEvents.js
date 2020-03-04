@@ -66,7 +66,7 @@ const PastEvents = () => {
 
       <ul className={pasteventsStyles.list}>
         {events.map(event => (
-          <li className={pasteventsStyles.event}>
+          <li className={pasteventsStyles.event} key={event.node.id}>
             <h3 className={pasteventsStyles.eventName}>{event.node.title}</h3>
             <span className={pasteventsStyles.eventDate}>
               {event.node.date}

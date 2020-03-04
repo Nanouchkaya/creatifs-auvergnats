@@ -16,7 +16,7 @@ const Intro = () => {
   `)
 
   return (
-    <div className={introStyles.container} id="intro" key="introductionSection">
+    <div className={introStyles.container} id="intro">
       <h2 className={introStyles.title}>
         {data.contentfulSectionSimple.titreSection}
       </h2>
